@@ -24,19 +24,19 @@ class BaseMsg:
         return self._data
     
     def __len__(self):
-        return len(self._data)
+        return len(str(self))
     
     def __eq__(self, other):
-        if isinstance(other, BaseMsg):
-            return self._data == other._data
+        if isinstance(other, self.__class__):
+            return str(self) == str(other)
         else:
             return False
     
     def __add__(self, other):
         if isinstance(other, BaseMsg):
-            return BaseMsg(self._data + other._data)
+            return self.__class__(self._data + other._data)
         elif isinstance(other, str):
-            return BaseMsg(self._data + other)
+            return self.__class__(self._data + other)
         else:
             return NotImplemented
 
