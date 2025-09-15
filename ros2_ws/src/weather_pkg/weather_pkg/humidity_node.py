@@ -12,9 +12,9 @@ class humidity_publisher(Node):
 
     def timer_callback(self):
         msg=RelativeHumidity()
-        msg.relative_humidity = float(randint(15, 40))
+        msg.relative_humidity = float(randint(20, 100))
         self.publisher_.publish(msg)
-        #self.get_logger().info(f"humidity: {msg.relative_humidity} %")
+        self.get_logger().info(f"humidity: {msg.relative_humidity} %")
 
 def main():
     rclpy.init()

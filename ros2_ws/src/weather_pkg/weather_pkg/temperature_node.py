@@ -14,7 +14,7 @@ class temp_publisher(Node):
         msg=Temperature()
         msg.temperature = float(randint(15, 40))
         self.publisher_.publish(msg)
-        #self.get_logger().info(f"temperature: {msg.temperature} °C")
+        self.get_logger().info(f"temperature: {msg.temperature} °C")
 
 def main():
     rclpy.init()

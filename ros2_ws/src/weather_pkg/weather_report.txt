@@ -1,0 +1,15 @@
+temperature = 32.0°C, Humidity = 58.0%, Pressure =936.0hPa
+temperature = 28.0°C, Humidity = 49.0%, Pressure =1016.0hPa
+temperature = 27.0°C, Humidity = 95.0%, Pressure =909.0hPa
+temperature = 27.0°C, Humidity = 95.0%, Pressure =909.0hPa
+temperature = 33.0°C, Humidity = 83.0%, Pressure =1097.0hPa
+temperature = 21.0°C, Humidity = 25.0%, Pressure =913.0hPa
+temperature = 39.0°C, Humidity = 43.0%, Pressure =904.0hPa
+temperature = 39.0°C, Humidity = 43.0%, Pressure =904.0hPa
+temperature = 19.0°C, Humidity = 21.0%, Pressure =992.0hPa
+temperature = 34.0°C, Humidity = 54.0%, Pressure =936.0hPa
+temperature = 23.0°C, Humidity = 27.0%, Pressure =1058.0hPa
+temperature = 36.0°C, Humidity = 62.0%, Pressure =992.0hPa
+temperature = 22.0°C, Humidity = 31.0%, Pressure =992.0hPa
+temperature = 22.0°C, Humidity = 31.0%, Pressure =1056.0hPa
+temperature = 37.0°C, Humidity = 53.0%, Pressure =903.0hPa

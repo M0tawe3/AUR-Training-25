@@ -14,7 +14,7 @@ class pressure_publisher(Node):
         msg=FluidPressure()
         msg.fluid_pressure = float(randint(900, 1100))
         self.publisher_.publish(msg)
-        #self.get_logger().info(f"pressure: {msg.fluid_pressure} hPa")
+        self.get_logger().info(f"pressure: {msg.fluid_pressure} hPa")
 
 def main():
     rclpy.init()

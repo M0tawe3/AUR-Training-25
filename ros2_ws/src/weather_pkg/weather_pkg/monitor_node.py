@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
 from sensor_msgs.msg import RelativeHumidity
 from sensor_msgs.msg import Temperature
 from sensor_msgs.msg import FluidPressure
@@ -20,6 +19,9 @@ class monitor(Node):
         self.latest_humidity = None
         self.latest_pressure = None
 
+        self.log_file = open("weather_report.txt", "a")
+        self.add_on_shutdown(self.cleanup)
+
 
     def humidity_callback(self, msg: RelativeHumidity):
         self.latest_humidity = msg.relative_humidity
@@ -33,11 +35,15 @@ class monitor(Node):
     def log_all(self):
         if self.latest_humidity is not None and self.latest_temp is not None and self.latest_pressure is not None:
            self.get_logger().info(f"temperature = {self.latest_temp}°C, Humidity = {self.latest_humidity}%, Pressure ={self.latest_pressure}hPa")
+           self.log_file.write(f"temperature = {self.latest_temp}°C, Humidity = {self.latest_humidity}%, Pressure ={self.latest_pressure}hPa\n")
+           self.log_file.flush()
+
 
 
 def main():
     rclpy.init()
     node=monitor()
     rclpy.spin(node)
+    node.log_file.close()
     node.destroy_node()
     rclpy.shutdown()
