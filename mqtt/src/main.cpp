@@ -23,7 +23,7 @@ void reconnect();
 void setup() {
     Serial.begin(11520);
     WiFi.begin(ssid, password);
-    while (!mqttClient.connected()) {
+    while (WiFi.status() != WL_CONNECTED) {
         delay(250);
     }
 
